@@ -1,3 +1,5 @@
+<!-- Common details for all pages of the application -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -23,6 +25,21 @@
             <a class="nav-link" href="#">See all Classes</a>
           </li>
         </ul>
+        <ul class="navbar-nav"> <!-- begin display if user is logged in -->
+          <% if user_signed_in? %>
+          <li class="nav-item"> <!-- If the user is present, display sign out button -->
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          </li>
+          <% else %>
+          <li class="nav-item"> <!-- Button to sign in existing user -->
+            <%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item"> <!-- Button to sign up a new user -->
+            <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
+          </li>
+          <% end %>
+        </ul>
+        <!-- End display if user is logged in -->
       </div>
     </nav>
 
