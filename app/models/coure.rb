@@ -1,0 +1,2 @@
+class Coure < ApplicationRecord
+end
