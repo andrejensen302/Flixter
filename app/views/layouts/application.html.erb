@@ -21,9 +21,8 @@
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-
           <li class="nav-item">
-            <a class="nav-link" href="#">See all Classes</a>
+            <%= link_to 'See All Courses', courses_path %>
           </li>
         </ul>
         <ul class="navbar-nav"> <!-- begin display if user is logged in -->
@@ -58,7 +57,7 @@
     <div class="container">
       <b>Teachers</b>
       <br />
-      <%= link_to 'Teach a Course', new_instructor_course_path %> 
+      <%= link_to 'Teach a Course', new_instructor_course_path %>
     </div>
   </div>
   </body>
