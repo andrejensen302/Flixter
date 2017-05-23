@@ -10,11 +10,23 @@
   </div>
 
   <ul>
+    <!-- Code that displays each section of the course -->
     <% @course.sections.each do |section| %>
     <li>
       <%= section.title %>
+      <%= link_to 'New Lesson', new_instructor_course_section_path(section), class: 'float-right btn btn-primary btn-sm' %>
+      <ul>
+        <% section.lessons.each do |lesson| %>
+        <li>
+          <b><%= lesson.title %></b>
+          -
+          <%= lesson.subtitle %>
+        </li>
+        <% end %>
+      </ul>
+      <br class ="clr" />
     </li>
     <% end %>
   </ul>
-
+<!-- End of code that displays each section of the course -->
 </div>
