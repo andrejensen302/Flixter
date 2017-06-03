@@ -1,6 +1,7 @@
 class Course < ApplicationRecord
   belongs_to :user
   has_many :sections
+  has_many :photos
 
   validates :title, presence: true #course has title when instructor creates a course
   validates :description, presence: true #course has description when instructor creates course
